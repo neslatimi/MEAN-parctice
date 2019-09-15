@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .jumbotron
+    h2.display-3 #{data.name}
+    img(src="/images/icons8-charlie-chaplin-64.png")
+    p.lead ID: #{data.id}
+    hr.my-4
+    p Job:  #{data.job}
+    p Salary:  #{data.salary}  €
+    p Department : #{data.department}
+    p Location of the department : #{data.location}
+    p.lead
+      a.btn.btn-primary.btn-lg(href='/employees' role='button') Back

@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1.mb-3 Welcome to #{title}
+  .row
+    .card.text-white.bg-primary.mb-3.mr-5(style='max-width: 20rem;')
+      .card-header &nbsp;
+      .card-body
+        h4.card-title Employee statistic:
+        each no in numberOfAllEmployee
+          p.card-text The number of all employees: #{no}
+        each commonJob in mostCommonJob  
+          p.card-text The most common job : #{commonJob}
+        each highSal in highestSalary 
+          p.card-text The highest salary: #{highSal} €
+        each lowSal in lowestSalary  
+          p.card-text The lowest salary: #{lowSal} €
+        each avgSal in avgSalary  
+          p.card-text The avarege salary: #{avgSal} €
+      .card-footer &nbsp;
+    .card.text-white.bg-primary.mb-3(style='max-width: 20rem;')
+      .card-header &nbsp;
+      .card-body
+        h4.card-title Department statistic :
+        p.card-text The departments by location:
+        ul
+          each dept in department
+            li #{dept.name} : #{dept.location}
+        each favDept in favouriteDepartment    
+          p.card-text The most favourite department : #{favDept}
+      .card-footer &nbsp; 

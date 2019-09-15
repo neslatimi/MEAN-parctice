@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  h3 Add a new employee!
+    a.btn.btn-success(href="/employees/new") Add new
+  table.table.table-stripped.table-hover.table-primary
+    thead.table-active
+      tr
+        th #
+        th Name
+        th Job
+        th Salary
+        th Department
+        th
+    tbody
+      each em in emp
+        tr 
+          td #{em.id}    
+          td #{em.name}    
+          td #{em.job}    
+          td #{em.salary} €    
+          td #{em.departmentName}
+          td.btn-group(rowspan='3')
+            a.btn.btn-info(href=`/employees/show/${em.id}`) Show more
+            a.btn.btn-warning(href=`/employees/edit/${em.id}`) Edit
+            a.btn.btn-danger(href=`/employees/cancel/${em.id}`) Cancel   

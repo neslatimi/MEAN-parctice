@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1.mt-3 Edit employee 
+  form(method="POST")
+    .form-group
+      label.form-control-label ID
+        input(type="text" name="id" disabled value=`${emp.id}`).form-control
+    .form-group  
+      label.form-control-label Name
+        input(type="text" name="name" value=`${emp.name}`).form-control
+    .form-group  
+      label.form-control-label Job
+        input(type="text" name="job" value=`${emp.job}`).form-control
+    .form-group  
+      label.form-control-label Salary
+        input(type="text" name="salary" value=`${emp.salary}`).form-control
+    .form-group  
+      label(for="department").form-control-label Department
+        select(name="department")#department.custom-select
+          each em in empDep
+            option(value=`${em.departmentNumber}`) #{em.departmentName}
+    button.btn.btn-info Send

@@ -1,0 +1,26 @@
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Edit Employee</h1>
+                <form  method="POST">
+                    <div class="form-group">
+                        <label class="form-control-label" for="name"> Name:</label>
+                            <input class="form-control" type="text" name="name" id="name" [(ngModel)]="employee.name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="job"> Job:</label>
+                            <input class="form-control" type="text" name="job" id="job" [(ngModel)]="employee.job">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="salary"> Salary:</label>
+                            <input class="form-control" type="text" name="salary" id="salary" [(ngModel)]="employee.salary">
+                    </div>
+                    <div class="form-group">
+                            <label class="form-control-label" for="department"> Department :</label>
+                                <input class="form-control" type="text" name="department" id="department" [(ngModel)]="employee.department">
+                        </div>
+                    <button (click)="onUpdate()" type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>

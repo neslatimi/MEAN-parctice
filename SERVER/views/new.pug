@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1.mt-3 New employee 
+  form(method="POST")
+    .form-group  
+      label.form-control-label Name
+        input(type="text" name="name").form-control
+    .form-group  
+      label.form-control-label Job
+        input(type="text" name="job").form-control
+    .form-group  
+      label.form-control-label Salary
+        input(type="text" name="salary").form-control
+    .form-group  
+      label(for="department").form-control-label Department
+        select(name="department")#department.custom-select
+          each em in empDep
+            option(value=`${em.departmentNumber}`) #{em.departmentName}
+    button.btn.btn-info Send
